@@ -37,7 +37,7 @@ int main(){
   while (curState.alive()){
     getline(cin, strCommand);
     vecCommand =  splitString(strCommand);
-    curState.changeCommand(vecCommand);
+    curState.request(vecCommand);
   }
   return 0;
 }

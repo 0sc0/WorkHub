@@ -38,26 +38,28 @@ class Command{
 public:
   Command(State* pState) : p_State(pState){}
   virtual ~Command(){}
-  virtual void Handle(State* pState, vector<string> vecCommand);
+  virtual void Handle(vector<string> vecCommand) = 0;
 protected:
   State* p_State;
 };
 
 class Init : public Command{
-  void Handle(State* pState, vector<string> vecCommand);
+public:
+  Init(State* pState) : Command(pState){}
+  void Handle(vector<string> vecCommand);
 };
 
-class Exit : public Command{
-  void exec();
-};
-
-class Status : public Command{
-  void exec();
-};
-
-class Ls : public Command{
-  
-};
+//class Exit : public Command{
+//  void exec();
+//};
+//
+//class Status : public Command{
+//  void exec();
+//};
+//
+//class Ls : public Command{
+//  
+//};
  
 
 #endif
